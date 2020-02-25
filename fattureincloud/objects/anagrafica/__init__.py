@@ -1,4 +1,4 @@
-from invoice.fattureincloud.base import MultipleManager
+from fattureincloud.base import MultipleManager
 from .soggetto import *
 
 TYPE_ANAGRAFICA_CLIENTI = 'clienti'

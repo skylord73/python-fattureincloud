@@ -1,6 +1,10 @@
 import requests
 
-from invoice.fattureincloud.exceptions import FattureInCloudHttpError
+from fattureincloud.exceptions import FattureInCloudHttpError
+
+__title__ = "python-fattureincloud"
+__version__ = "0.0.0"
+__author__ = "Federico Torresan"
 
 
 class FattureInCloud(object):

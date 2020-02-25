@@ -1,6 +1,6 @@
 # Clienti
-from invoice.fattureincloud import mixins
-from invoice.fattureincloud.base import Manager, RESTObject
+from fattureincloud import mixins
+from fattureincloud.base import Manager, RESTObject
 
 SOGGETTO_NUOVO_ATTRS = (
     tuple(

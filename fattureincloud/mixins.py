@@ -1,4 +1,4 @@
-from invoice.fattureincloud import exceptions as exc
+from fattureincloud import exceptions as exc
 
 
 class DettagliMixin(object):
