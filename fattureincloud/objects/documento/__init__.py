@@ -1,4 +1,4 @@
-from invoice.fattureincloud.base import MultipleManager
+from fattureincloud.base import MultipleManager
 from .fatture import *
 
 TYPE_DOCUMENTO_FATTURE = 'fatture'

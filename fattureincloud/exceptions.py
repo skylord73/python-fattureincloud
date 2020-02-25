@@ -9,7 +9,7 @@ class FattureInCloudError(Exception):
         self.response_code = response_code
         # Full http response
         self.response_body = response_body
-        # Parsed error message from invoice.fattureincloud
+        # Parsed error message from fattureincloud
         try:
             # if we receive str/bytes we try to convert to unicode/str to have
             # consistent message types (see #616)

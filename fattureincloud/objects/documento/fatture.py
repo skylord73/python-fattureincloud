@@ -1,6 +1,6 @@
 # Fatture
-from invoice.fattureincloud import mixins
-from invoice.fattureincloud.base import Manager, RESTObject
+from fattureincloud import mixins
+from fattureincloud.base import Manager, RESTObject
 
 FATTURA_NUOVO_ATTRS = (
     (
