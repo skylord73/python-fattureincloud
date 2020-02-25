@@ -16,7 +16,7 @@ with open("README.md", "r") as readme_file:
     readme = readme_file.read()
 
 setup(
-    name="python-fattureincloud",
+    name="fattureincloud",
     version=get_version(),
     description="Fatture In Cloud API SDK",
     long_description=readme,
