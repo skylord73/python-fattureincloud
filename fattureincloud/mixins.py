@@ -95,7 +95,7 @@ class ModificaMixin(object):
         if data is None:
             data = {}
 
-        if id not in data and 'token' not in data and hasattr(self, 'get_id'):
+        if 'id' not in data and 'token' not in data and hasattr(self, 'get_id'):
             data['id'] = self.get_id()
 
         self._check_missing_modifica_attrs(data)
