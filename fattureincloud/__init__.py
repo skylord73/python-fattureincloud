@@ -18,7 +18,7 @@ class FattureInCloud(object):
 
         # Endpoints definitions
         import importlib
-        objects = importlib.import_module("invoice.fattureincloud.objects")
+        objects = importlib.import_module("fattureincloud.objects")
         self._objects = objects
 
         self.documento = objects.DocumentoManager(self)
