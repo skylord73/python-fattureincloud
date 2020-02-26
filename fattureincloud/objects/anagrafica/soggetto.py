@@ -7,25 +7,25 @@ SOGGETTO_NUOVO_ATTRS = (
         'nome'
     ),
     (
-        "referente",
-        "indirizzo_via",
-        "indirizzo_cap",
-        "indirizzo_citta",
-        "indirizzo_provincia",
-        "indirizzo_extra",
-        "paese",
-        "paese_iso",
-        "mail",
+        'referente',
+        'indirizzo_via',
+        'indirizzo_cap',
+        'indirizzo_citta',
+        'indirizzo_provincia',
+        'indirizzo_extra',
+        'paese',
+        'paese_iso',
+        'mail',
         'tel'
         'fax',
-        "piva",
-        "cf",
-        "termini_pagamento",
-        "pagamento_fine_mese",
-        "cod_iva_default",
-        "extra",
-        "PA",
-        "PA_codice"
+        'piva',
+        'cf',
+        'termini_pagamento',
+        'pagamento_fine_mese',
+        'cod_iva_default',
+        'extra',
+        'PA',
+        'PA_codice'
     ),
 )
 
@@ -35,32 +35,32 @@ SOGGETTO_MODIFICA_ATTRS = (
     ),
     (
         'nome',
-        "referente",
-        "indirizzo_via",
-        "indirizzo_cap",
-        "indirizzo_citta",
-        "indirizzo_provincia",
-        "indirizzo_extra",
-        "paese",
-        "paese_iso",
-        "mail",
+        'referente',
+        'indirizzo_via',
+        'indirizzo_cap',
+        'indirizzo_citta',
+        'indirizzo_provincia',
+        'indirizzo_extra',
+        'paese',
+        'paese_iso',
+        'mail',
         'tel'
         'fax',
-        "piva",
-        "cf",
-        "termini_pagamento",
-        "pagamento_fine_mese",
-        "cod_iva_default",
-        "extra",
-        "PA",
-        "PA_codice"
+        'piva',
+        'cf',
+        'termini_pagamento',
+        'pagamento_fine_mese',
+        'cod_iva_default',
+        'extra',
+        'PA',
+        'PA_codice'
     ),
 )
 
 
 class Soggetto(mixins.EliminaMixin, mixins.ModificaMixin, RESTObject):
     """
-    Fatture
+    Soggetto
     """
     _modifica_attrs = SOGGETTO_MODIFICA_ATTRS
 

@@ -7,30 +7,30 @@ FATTURA_NUOVO_ATTRS = (
         'nome',
     ),
     (
-        "id_cliente",
-        "id_fornitore",
-        "indirizzo_via",
-        "indirizzo_cap",
-        "indirizzo_citta",
-        "indirizzo_provincia",
-        "indirizzo_extra",
-        "paese",
-        "paese_iso",
-        "lingua",
-        "piva",
-        "cf",
-        "autocompila_anagrafica",
-        "salva_anagrafica",
-        "numero",
-        "data",
-        "valuta",
-        "valuta_cambio",
-        "prezzi_ivati",
-        "rivalsa", # [Non presente in ddt e ordforn]
-        "cassa", # [Non presente in ddt e ordforn]
-        "rit_acconto", # [Non presente in ddt e ordforn]
-        "imponibile_ritenuta", # [Non presente in ddt e ordforn]
-        "rit_altra", # [Non presente in ddt e ordforn]
+        'id_cliente',
+        'id_fornitore',
+        'indirizzo_via',
+        'indirizzo_cap',
+        'indirizzo_citta',
+        'indirizzo_provincia',
+        'indirizzo_extra',
+        'paese',
+        'paese_iso',
+        'lingua',
+        'piva',
+        'cf',
+        'autocompila_anagrafica',
+        'salva_anagrafica',
+        'numero',
+        'data',
+        'valuta',
+        'valuta_cambio',
+        'prezzi_ivati',
+        'rivalsa', # [Non presente in ddt e ordforn]
+        'cassa', # [Non presente in ddt e ordforn]
+        'rit_acconto', # [Non presente in ddt e ordforn]
+        'imponibile_ritenuta', # [Non presente in ddt e ordforn]
+        'rit_altra', # [Non presente in ddt e ordforn]
         'marca_bollo', # [Non presente in ddt e ordforn]
         'oggetto_visibile', # [Non presente in ddt]
         'oggetto_interno', # [Non presente in ddt]
@@ -45,8 +45,16 @@ FATTURA_NUOVO_ATTRS = (
         # 'ftacc_id_template', # [Solo se ftacc=true]
         'mostra_info_pagamento', # [Non presente in ddt e ndc]
         'metodo_pagamento',
-        'metodo_titoloN',
-        'metodo_descN',
+        'metodo_titolo1',
+        'metodo_desc1',
+        'metodo_titolo2',
+        'metodo_desc2',
+        'metodo_titolo3',
+        'metodo_desc3',
+        'metodo_titolo4',
+        'metodo_desc4',
+        'metodo_titolo5',
+        'metodo_desc5',
         # 'mostra_totali', # [Solo per preventivi, rapporti e ordforn]
         'mostra_bottone_paypal', # [Solo per ricevute, fatture, proforma, ordini]
         'mostra_bottone_bonifico', # [Solo per ricevute, fatture, proforma, ordini]
@@ -85,31 +93,31 @@ FATTURA_MODIFICA_ATTRS = (
     (
         'id',
         'token',
-        "id_cliente",
-        "id_fornitore",
+        'id_cliente',
+        'id_fornitore',
         'nome',
-        "indirizzo_via",
-        "indirizzo_cap",
-        "indirizzo_citta",
-        "indirizzo_provincia",
-        "indirizzo_extra",
-        "paese",
-        "paese_iso",
-        "lingua",
-        "piva",
-        "cf",
-        "autocompila_anagrafica",
-        "salva_anagrafica",
-        "numero",
-        "data",
-        "valuta",
-        "valuta_cambio",
-        "prezzi_ivati",
-        "rivalsa",  # [Non presente in ddt e ordforn]
-        "cassa",  # [Non presente in ddt e ordforn]
-        "rit_acconto",  # [Non presente in ddt e ordforn]
-        "imponibile_ritenuta",  # [Non presente in ddt e ordforn]
-        "rit_altra",  # [Non presente in ddt e ordforn]
+        'indirizzo_via',
+        'indirizzo_cap',
+        'indirizzo_citta',
+        'indirizzo_provincia',
+        'indirizzo_extra',
+        'paese',
+        'paese_iso',
+        'lingua',
+        'piva',
+        'cf',
+        'autocompila_anagrafica',
+        'salva_anagrafica',
+        'numero',
+        'data',
+        'valuta',
+        'valuta_cambio',
+        'prezzi_ivati',
+        'rivalsa',  # [Non presente in ddt e ordforn]
+        'cassa',  # [Non presente in ddt e ordforn]
+        'rit_acconto',  # [Non presente in ddt e ordforn]
+        'imponibile_ritenuta',  # [Non presente in ddt e ordforn]
+        'rit_altra',  # [Non presente in ddt e ordforn]
         'marca_bollo',  # [Non presente in ddt e ordforn]
         'oggetto_visibile',  # [Non presente in ddt]
         'oggetto_interno',  # [Non presente in ddt]
@@ -184,6 +192,18 @@ class Fatture(mixins.DettagliMixin, mixins.EliminaMixin, mixins.ModificaMixin, R
     Fatture
     """
     _modifica_attrs = FATTURA_MODIFICA_ATTRS
+
+    PAYMENT_METHOD_CASH = 'MP01'
+    PAYMENT_METHOD_BANK_CHECK = 'MP02'
+    PAYMENT_METHOD_CASHIERS_CHECK = 'MP03'
+    PAYMENT_METHOD_BANK_TRANSFER = 'MP05'  # Bank transfer
+    PAYMENT_METHOD_CREDIT_CARD = 'MP08' # Credit card
+    PAYMENT_METHOD_SEPA_DIRECT_DEBIT = 'MP19'
+    PAYMENT_METHOD_SEPA_DIRECT_DEBIT_CORE = 'MP20'
+    PAYMENT_METHOD_SEPA_DIRECT_DEBIT_B2B = 'MP21'
+
+    CUSTOMER_TYPE_B2B = 'B2B'
+    CUSTOMER_TYPE_PA = 'PA'
 
 
 class FattureManager(mixins.CRUDMixin, mixins.InfoMixin, mixins.InfoMailMixin, mixins.InviaMailMixin, Manager):
