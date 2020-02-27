@@ -205,6 +205,10 @@ class Fatture(mixins.DettagliMixin, mixins.EliminaMixin, mixins.ModificaMixin, R
     CUSTOMER_TYPE_B2B = 'B2B'
     CUSTOMER_TYPE_PA = 'PA'
 
+    LANGUAGE_IT = 'it'
+    LANGUAGE_EN = 'en'
+    LANGUAGE_DE = 'de'
+
 
 class FattureManager(mixins.CRUDMixin, mixins.InfoMixin, mixins.InfoMailMixin, mixins.InviaMailMixin, Manager):
     _path = 'fatture'

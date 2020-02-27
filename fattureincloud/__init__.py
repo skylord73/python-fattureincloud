@@ -3,7 +3,7 @@ import requests
 from fattureincloud.exceptions import FattureInCloudHttpError
 
 __title__ = "python-fattureincloud"
-__version__ = "0.0.0"
+__version__ = "0.0.7"
 __author__ = "Federico Torresan"
 
 
