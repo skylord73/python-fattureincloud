@@ -202,9 +202,6 @@ class Fatture(mixins.DettagliMixin, mixins.EliminaMixin, mixins.ModificaMixin, R
     PAYMENT_METHOD_SEPA_DIRECT_DEBIT_CORE = 'MP20'
     PAYMENT_METHOD_SEPA_DIRECT_DEBIT_B2B = 'MP21'
 
-    CUSTOMER_TYPE_B2B = 'B2B'
-    CUSTOMER_TYPE_PA = 'PA'
-
     LANGUAGE_IT = 'it'
     LANGUAGE_EN = 'en'
     LANGUAGE_DE = 'de'

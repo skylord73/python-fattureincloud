@@ -64,6 +64,15 @@ class Soggetto(mixins.EliminaMixin, mixins.ModificaMixin, RESTObject):
     """
     _modifica_attrs = SOGGETTO_MODIFICA_ATTRS
 
+    TYPE_B2B = 'B2B'
+    TYPE_PA = 'PA'
+
+    FOREIGN = {
+        'POSTAL_CODE': '00000',
+        'ADDRESS': 'EE',
+        'PA_CODE': 'XXXXXXX'
+    }
+
 
 class ClientiManager(mixins.NuovoMixin, mixins.ModificaMixin, mixins.EliminaMixin, Manager):
     _path = 'clienti'
