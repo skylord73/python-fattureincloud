@@ -2,7 +2,7 @@
 
 Python API to access data in FattureInCloud.it software
 
-*Read this in other languages : [Italiano](/README.it.md)*
+*Read this in other languages : [Italiano](../../README.it.md)*
 
 ## Installation
 
