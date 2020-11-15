@@ -23,6 +23,7 @@ class FattureInCloud(object):
 
         self.documento = objects.DocumentoManager(self)
         self.anagrafica = objects.AnagraficaManager(self)
+        self.acquisti = objects.AcquistiManager(self)
 
     def _build_url(self, path=None):
         url = '%s' % self.base_url

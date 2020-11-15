@@ -206,7 +206,6 @@ class Fatture(mixins.DettagliMixin, mixins.EliminaMixin, mixins.ModificaMixin, R
     LANGUAGE_EN = 'en'
     LANGUAGE_DE = 'de'
 
-
 class FattureManager(mixins.ListaMixin, mixins.CRUDMixin, mixins.InfoMixin, mixins.InfoMailMixin, mixins.InviaMailMixin, Manager):
     _path = 'fatture'
     _obj_cls = Fatture
