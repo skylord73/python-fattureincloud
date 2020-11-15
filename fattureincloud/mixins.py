@@ -153,6 +153,17 @@ class InfoMixin(object):
         path = '%s/info' % self._path
         return self.fattureincloud.http_request(path, data={'anno': anno}, **kwargs)
 
+class ListaMixin(object):
+    @exc.on_http_error(exc.FattureInCloudInfoError)
+    def lista(self, anno, **kwargs):
+        """
+        Retrieve a single object.
+        """
+        if anno is None:
+            raise AttributeError('You need to specify the anno attribute')
+
+        path = '%s/lista' % self._path
+        return self.fattureincloud.http_request(path, data={'anno': anno}, **kwargs)
 
 class InfoMailMixin(object):
     @exc.on_http_error(exc.FattureInCloudInfoMailError)
