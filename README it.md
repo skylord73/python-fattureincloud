@@ -2,7 +2,7 @@
 
 Python API per accedere al software di FattureInCloud.ii
 
-*Leggilo in altre lingue : [English](./README.md)*
+*Leggilo in altre lingue : [English](/README.md)*
 
 ## Instalazione
 
