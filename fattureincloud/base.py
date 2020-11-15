@@ -74,3 +74,9 @@ class RESTObject(object):
         if self._id_attr is None or not hasattr(self, self._id_attr):
             return None
         return getattr(self, self._id_attr)
+    
+    def fields(self):
+        """Return fileds retrived from server"""
+        if self._data is None:
+            return None
+        return self._data.keys()

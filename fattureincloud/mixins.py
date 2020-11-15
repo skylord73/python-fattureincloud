@@ -155,7 +155,7 @@ class InfoMixin(object):
 
 class ListaMixin(object):
     @exc.on_http_error(exc.FattureInCloudInfoError)
-    def lista(self, anno, **kwargs):
+    def lista_raw(self, anno, **kwargs):
         """
         Retrieve a single object.
         """
@@ -164,6 +164,11 @@ class ListaMixin(object):
 
         path = '%s/lista' % self._path
         return self.fattureincloud.http_request(path, data={'anno': anno}, **kwargs)
+    
+    def lista(self, anno, **kwargs):
+        data = self.lista_raw(anno,**kwargs)
+        return data['lista_documenti']
+    
 
 class InfoMailMixin(object):
     @exc.on_http_error(exc.FattureInCloudInfoMailError)

@@ -75,7 +75,7 @@ class Acquisti(mixins.DettagliMixin, mixins.EliminaMixin, mixins.ModificaMixin, 
     LANGUAGE_DE = 'de'
 
 
-class AcquistiManager(mixins.ListaMixin, mixins.CRUDMixin, mixins.InfoMixin, Manager):
+class AcquistiManager(mixins.ListaMixin, mixins.CRUDMixin, Manager):
     _path = 'acquisti'
     _obj_cls = Acquisti
     _nuovo_attrs = ACQUISTO_NUOVO_ATTRS
