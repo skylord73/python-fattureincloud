@@ -1,4 +1,4 @@
-from fattureincloud import exceptions as exc
+from . import exceptions as exc
 
 
 class DettagliMixin(object):
@@ -159,16 +159,19 @@ class ListaMixin(object):
         """
         Retrieve a single object.
         """
+
         if anno is None:
             raise AttributeError('You need to specify the anno attribute')
 
+        filter = {'anno': anno}
+        filter.update(kwargs)
         path = '%s/lista' % self._path
-        return self.fattureincloud.http_request(path, data={'anno': anno}, **kwargs)
-    
+        return self.fattureincloud.http_request(path, data=filter, **kwargs)
+
     def lista(self, anno, **kwargs):
         data = self.lista_raw(anno,**kwargs)
         return data['lista_documenti']
-    
+
 
 class InfoMailMixin(object):
     @exc.on_http_error(exc.FattureInCloudInfoMailError)

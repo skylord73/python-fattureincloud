@@ -1,6 +1,6 @@
 # Acquisti
-from fattureincloud import mixins
-from fattureincloud.base import Manager, RESTObject
+from ... import mixins
+from ...base import Manager, RESTObject
 
 
 

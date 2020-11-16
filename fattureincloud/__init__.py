@@ -1,6 +1,6 @@
 import requests
 
-from fattureincloud.exceptions import FattureInCloudHttpError
+from .exceptions import FattureInCloudHttpError
 
 __title__ = "python-fattureincloud"
 __version__ = "0.0.7"
@@ -18,7 +18,8 @@ class FattureInCloud(object):
 
         # Endpoints definitions
         import importlib
-        objects = importlib.import_module("fattureincloud.objects")
+        #objects = importlib.import_module("fattureincloud.objects")
+        objects = importlib.import_module(".objects", __name__)
         self._objects = objects
 
         self.documento = objects.DocumentoManager(self)
@@ -53,4 +54,3 @@ class FattureInCloud(object):
             error_message=error_message,
             response_body=result.content,
         )
-
