@@ -157,7 +157,8 @@ class ListaMixin(object):
     @exc.on_http_error(exc.FattureInCloudInfoError)
     def lista_raw(self, anno, **kwargs):
         """
-        Retrieve a single object.
+        Retrieve list of documents in year.
+        You can add extra filter like data_inizio="01/01/2020", data_fine="01/02/2020"
         """
 
         if anno is None:
@@ -166,7 +167,7 @@ class ListaMixin(object):
         filter = {'anno': anno}
         filter.update(kwargs)
         path = '%s/lista' % self._path
-        return self.fattureincloud.http_request(path, data=filter, **kwargs)
+        return self.fattureincloud.http_request(path, data=filter)
 
     def lista(self, anno, **kwargs):
         data = self.lista_raw(anno,**kwargs)
